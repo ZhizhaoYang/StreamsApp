@@ -16,7 +16,9 @@ class StreamList extends Component {
           <Link to={`/streams/edit/${stream.id}`} className="ui button primary">
             Edit
           </Link>
-          <button className="ui button red">Delete</button>
+          <Link to={`/streams/delete/${stream.id}`} className="ui button red">
+            Delete
+          </Link>
         </div>
       );
     }
@@ -25,8 +27,12 @@ class StreamList extends Component {
   renderCreate = () => {
     if (this.props.isSignedIn) {
       return (
-        <div style={{ textAlign: "right" }}>
-          <Link to="/streams/new" className="ui button primary">
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
+          <Link
+            to="/streams/new"
+            className="ui button primary"
+            style={{ minWidth: "200px" }}
+          >
             Create Scream
           </Link>
         </div>
@@ -39,9 +45,11 @@ class StreamList extends Component {
       return (
         <div className="item" key={stream.id}>
           {this.renderAdmin(stream)}
-          <i className="large middle aligned icon camera" />
+          <i className="big middle aligned icon camera" />
           <div className="content">
-            {stream.title}
+            <Link to={`/streams/${stream.id}`} className="header">
+              <h3>{stream.title}</h3>
+            </Link>
             <div className="description">{stream.description}</div>
           </div>
         </div>
@@ -50,12 +58,12 @@ class StreamList extends Component {
   };
 
   render() {
-    // console.log(this.props.streams);
-    // console.log(this.props);
     return (
       <div>
         <h2>Streams</h2>
-        <div className="ui celled list">{this.renderList()}</div>
+        <div className="ui celled list animated middle aligned">
+          {this.renderList()}
+        </div>
         {this.renderCreate()}
       </div>
     );

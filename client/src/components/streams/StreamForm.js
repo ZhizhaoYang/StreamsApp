@@ -33,6 +33,10 @@ class StreamForm extends Component {
     this.props.onSubmit(formValues);
   };
 
+  onClickCancel = () => {
+    this.props.onClickCancel();
+  };
+
   render() {
     return (
       <form
@@ -45,7 +49,16 @@ class StreamForm extends Component {
           component={this.renderInput}
           label="Enter Description"
         />
-        <button className="ui button primary">Submit</button>
+        <button type="submit" className="ui button primary">
+          Submit
+        </button>
+        <button
+          type="button"
+          className="ui button"
+          onClick={this.onClickCancel}
+        >
+          Cancel
+        </button>
       </form>
     );
   }

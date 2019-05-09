@@ -52,9 +52,11 @@ export const fetchStream = id => async dispatch => {
 
 // editStream action creator
 export const editStream = (id, formValues) => async dispatch => {
-  const response = await streams.put(`/streams/${id}`, formValues);
+  const response = await streams.patch(`/streams/${id}`, formValues);
 
   dispatch({ type: EDIT_STREAM, payload: response.data });
+
+  history.push("/");
 };
 
 // delteStream action creator
@@ -62,4 +64,6 @@ export const deleteStream = id => async dispatch => {
   await streams.delete(`/streams/${id}`);
 
   dispatch({ type: DELETE_STREAM, payload: id });
+
+  history.push("/");
 };
