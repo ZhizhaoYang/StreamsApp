@@ -1,0 +1,40 @@
+{
+  "streams": [
+    {
+      "title": "one",
+      "description": "111",
+      "userId": "107203667817947089150",
+      "id": 1
+    },
+    {
+      "title": "two",
+      "description": "222",
+      "userId": "107203667817947089150",
+      "id": 2
+    },
+    {
+      "title": "three",
+      "description": "333",
+      "userId": "111795537766862750603",
+      "id": 3
+    },
+    {
+      "title": "four",
+      "description": "444",
+      "userId": "111795537766862750603",
+      "id": 4
+    },
+    {
+      "title": "five",
+      "description": "555",
+      "userId": "110900879539448779043",
+      "id": 5
+    },
+    {
+      "title": "six",
+      "description": "666",
+      "userId": "110900879539448779043",
+      "id": 6
+    }
+  ]
+}
